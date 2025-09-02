@@ -1,0 +1,87 @@
+@use "variables.scss" as vars;
+
+@media (max-width: 1024px) {
+/* mediaQ: INDEX */ 
+    .main_index {
+        display: flex !important;       
+        width: 100% !important; 
+        flex-wrap: wrap !important;              
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        flex-direction: column !important;
+            .section_image_principal{
+                display: flex !important;
+                width: 100% !important;
+                justify-content: center !important;
+                    img{
+                        width: 50% !important;
+                    }
+            }
+            .iframe_video_principal{
+                height: 100% !important;
+                padding: 10px 40px 10px 40px;
+            }
+            h3{
+                font-size: 2.6rem !important;
+                span{
+                    font-size: 2.2rem;
+                }
+            }
+        } /* Nose porque sin los !important no me funciona */
+    .main_index > * {
+        display: block !important;                
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        clear: both !important;
+        position: static !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        h1{
+            width: 100% !important;
+            flex-wrap: nowrap;
+        }
+        
+        .nav-list{
+            position: fixed !important;
+            flex-direction: column !important;
+            top: 0 !important;
+            right: 0 !important;
+            width: 50% !important;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 1001;
+            display: block;
+            padding: 0;
+            background-color: vars.$secondary_color;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0 , .5);
+            
+            opacity: 0 ;
+            visibility: hidden;
+        }
+        .nav-list.visible{
+            opacity: 1 ;
+            visibility: visible ;
+
+        }
+        .btn_header{
+            display: block !important;
+            margin: auto;
+        }
+        .btn_cerrarHeader{
+            display: block !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 30px 30px 0 0;
+        }
+
+    }
+}
+
+

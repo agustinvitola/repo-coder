@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@media (max-width: 1024px) {
+  /* mediaQ: INDEX */
+  .main_index {
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+  }
+  .main_index .section_image_principal {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .main_index .section_image_principal img {
+    width: 50% !important;
+  }
+  .main_index .iframe_video_principal {
+    height: 100% !important;
+    padding: 10px 40px 10px 40px;
+  }
+  .main_index h3 {
+    font-size: 2.6rem !important;
+  }
+  .main_index h3 span {
+    font-size: 2.2rem;
+  }
+  /* Nose porque sin los !important no me funciona */
+  .main_index > * {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    clear: both !important;
+    position: static !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header h1 {
+    width: 100% !important;
+    flex-wrap: nowrap;
+  }
+  header .nav-list {
+    position: fixed !important;
+    flex-direction: column !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 50% !important;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1001;
+    display: block;
+    padding: 0;
+    background-color: #34699A;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+  header .nav-list.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  header .btn_header {
+    display: block !important;
+    margin: auto;
+  }
+  header .btn_cerrarHeader {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px 30px 0 0;
+  }
+}
+header {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  width: 100%;
+  padding: 0.6rem;
+  height: fit-content;
+  position: relative;
+  background-color: #0056b3;
+  justify-content: space-between;
+  max-width: 100vw;
+}
+header .btn_cerrarHeader, header .btn_header {
+  display: none;
+}
+header .Title {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #ffffff;
+  width: fit-content;
+}
+header .nav-bar {
+  gap: 1rem;
+  width: 70%;
+  max-width: 70%; /* ARREGLAR EN MEDIA Q TELEFONO */
+}
+header .nav-bar ol ul {
+  padding-left: 2rem;
+}
+header .nav-bar .nav-list {
+  gap: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header .nav-bar .nav-list a {
+  font-size: 1.4rem;
+  padding: 8px;
+  color: #34699A;
+  background-color: #f5f5f5;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #FDF5AA;
+  text-align: center;
+}
+footer p {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  margin-bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(52, 105, 154, 0.2901960784);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* main: INDEX */
+  /* main: FAMILIA */
+  /* main:Objetivos */
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  margin: 0;
+  font-weight: normal;
+}
+body .main_index { /* main: INDEX */
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+body .main_index .section_image_principal {
+  width: 22%;
+  max-width: 25%;
+  flex-shrink: 1;
+  min-width: 0;
+  height: auto;
+}
+body .main_index .section_image_principal .imagen_principal_main {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+body .main_index .texto_principal_section {
+  width: 35%;
+  max-width: 35%;
+  min-height: 40vh;
+  max-height: 70vh;
+  min-height: fit-content;
+  max-height: fit-content;
+  padding: 20px;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+body .main_index .texto_principal_section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+body .main_index .texto_principal_section p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+body .main_index .iframe_section_principal {
+  width: 40%;
+  max-width: 40%;
+  height: 40vh;
+  flex-shrink: 1;
+  min-width: 0;
+}
+body .main_index .iframe_section_principal .iframe_video_principal {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+body .main_familia .grilla {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+body .main_familia .grilla section {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Outfit", sans-serif;
+  text-align: start;
+  align-items: center;
+  text-shadow: 30px 11px 18px rgba(0, 0, 0, 0.194);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+body .main_familia .grilla .sectionFamilia1, body .main_familia .grilla .sectionFamilia2, body .main_familia .grilla .sectionFamilia3, body .main_familia .grilla .sectionFamilia4 {
+  justify-content: space-evenly;
+}
+body .main_familia .grilla .imagen_section_familia1 {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .main_familia .grilla .imagen_section_familia1 img {
+  width: 90%;
+  border: 0.65vw outset #ffffff;
+  height: auto;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+}
+body .main_familia .grilla .imagen_section_familia1 :hover {
+  transform: scale(110%);
+}
+body .main_familia .grilla .imagen_section_familia2 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .main_familia .grilla .imagen_section_familia2 img {
+  width: 50%;
+  border: 0.65vw outset #ffffff;
+  height: auto;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+}
+body .main_familia .grilla .imagen_section_familia2 :hover {
+  transform: scale(110%);
+}
+body .main_familia .grilla .imagen_section_familia3 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .main_familia .grilla .imagen_section_familia3 img {
+  width: 65%;
+  border: 0.65vw outset #ffffff;
+  height: auto;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+}
+body .main_familia .grilla .imagen_section_familia3 :hover {
+  transform: scale(110%);
+}
+body .main_familia .grilla .imagen_section_familia4 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .main_familia .grilla .imagen_section_familia4 img {
+  width: 45%;
+  border: 0.65vw outset #ffffff;
+  height: auto;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+}
+body .main_familia .grilla .imagen_section_familia4 :hover {
+  transform: scale(110%);
+}
+body .main_Objetivos {
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 4rem;
+  color: black;
+  text-align: center;
+}
+body .main_Objetivos h2 {
+  font-size: 4rem;
+  top: 150px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #FDF5AA;
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+  color: black;
+}
+body .main_Objetivos .logos {
+  display: inline-flex;
+  bottom: 150px;
+  gap: 20px;
+}
+body .main_Objetivos .logos img {
+  width: 50px;
+}
+body .main_Objetivos .carousel-item {
+  width: 10rem;
+}
+body .main_contacto {
+  margin: auto;
+  align-content: center;
+  background-color: #FDF5AA;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+}
+body .main_contacto .contacto {
+  padding: 4rem;
+}
+body .main_contacto .contacto form {
+  text-align: center;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -364,7 +364,7 @@ h2{
 }
 
 /* <------------------Footer------------------> */
-footer{
+/* footer{
     position: relative; 
     display: flex;
     width: 100%;
@@ -389,7 +389,7 @@ footer section p {
     padding: 5px;
     font-size: 1.2rem; 
     word-wrap: break-word; 
-}
+} */
 
 body {
     display: flex;
