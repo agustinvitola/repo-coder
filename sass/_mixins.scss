@@ -1,0 +1,20 @@
+@mixin respond-to ($breakpoint){
+    @if $breakpoint == tablet{  
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == mobile{  
+        @media screen and (max-width: 500px) {
+            @content;
+        }
+    }
+}
+
+@mixin flexible ($display, $direction, $wrap, $justify, $align){
+    display: $display;
+    flex-flow: $direction $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}

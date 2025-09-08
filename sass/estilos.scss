@@ -1,6 +1,6 @@
 @use "variables.scss" as vars;
-@use "mediaQuery.scss";
 @use "header-footer.scss";
+@use "mixins" as mix;
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
@@ -42,6 +42,10 @@ body{
                 display: block;
                 margin: auto;
             }
+             @include mix.respond-to(mobile){
+                width: 100%;
+                max-width: 100%;
+            }
         }
         .texto_principal_section{
             width: 35%;
@@ -54,6 +58,10 @@ body{
             flex-shrink: 1; 
             min-width: 0; 
             overflow-y: auto;
+            @include mix.respond-to(mobile){
+                width: 100%;
+                max-width: 100%;
+            }
             h3{
                 font-size: 1.8rem;
                 margin-bottom: 15px;
@@ -76,6 +84,15 @@ body{
                 height: 100%;
                 max-width: 100%; 
             }
+            @include mix.respond-to(mobile){
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+         @include mix.respond-to(mobile){
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
     }  
     /* main: INDEX */
@@ -86,6 +103,11 @@ body{
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             width: 100%;
+            @include mix.respond-to(mobile){
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
             section{
                 padding: 1rem;
                 display: flex;
@@ -164,8 +186,21 @@ body{
                     transform: scale(110%);
                 }
             }
-        }    
+            @include mix.respond-to(mobile){
+                .imagen_section_familia1,
+                .imagen_section_familia2,
+                .imagen_section_familia3,
+                .imagen_section_familia4 {
+                width: 90%;
+                }
+            } 
+            @include mix.respond-to(mobile){
+                @include mix.flexible (block, column, wrap, center, center);  
+            }
+        }
+  
     }
+    
     /* main: FAMILIA */
 
     .main_Objetivos{
@@ -182,6 +217,10 @@ body{
         padding: 4rem; 
         color:  black;
         text-align: center;
+        @include mix.respond-to(mobile){
+            font-size: 1.4rem;
+            padding: 2rem;
+        }
         h2{
             font-size: 4rem;
             top:150px;

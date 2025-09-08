@@ -1,83 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-@media (max-width: 1024px) {
-  /* mediaQ: INDEX */
-  .main_index {
-    display: flex !important;
-    width: 100% !important;
-    flex-wrap: wrap !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    flex-direction: column !important;
-  }
-  .main_index .section_image_principal {
-    display: flex !important;
-    width: 100% !important;
-    justify-content: center !important;
-  }
-  .main_index .section_image_principal img {
-    width: 50% !important;
-  }
-  .main_index .iframe_video_principal {
-    height: 100% !important;
-    padding: 10px 40px 10px 40px;
-  }
-  .main_index h3 {
-    font-size: 2.6rem !important;
-  }
-  .main_index h3 span {
-    font-size: 2.2rem;
-  }
-  /* Nose porque sin los !important no me funciona */
-  .main_index > * {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    position: static !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-  }
-  header h1 {
-    width: 100% !important;
-    flex-wrap: nowrap;
-  }
-  header .nav-list {
-    position: fixed !important;
-    flex-direction: column !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 50% !important;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 1001;
-    display: block;
-    padding: 0;
-    background-color: #34699A;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-  }
-  header .nav-list.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  header .btn_header {
-    display: block !important;
-    margin: auto;
-  }
-  header .btn_cerrarHeader {
-    display: block !important;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 30px 30px 0 0;
-  }
-}
 header {
   font-family: "Outfit", sans-serif;
   display: flex;
@@ -100,13 +21,24 @@ header .Title {
   color: #ffffff;
   width: fit-content;
 }
+@media screen and (max-width: 500px) {
+  header .Title {
+    font-size: 2.2rem;
+    width: 70%;
+  }
+}
 header .nav-bar {
   gap: 1rem;
   width: 70%;
-  max-width: 70%; /* ARREGLAR EN MEDIA Q TELEFONO */
+  max-width: 70%;
 }
-header .nav-bar ol ul {
+header .nav-bar ol {
   padding-left: 2rem;
+}
+@media screen and (max-width: 500px) {
+  header .nav-bar ol {
+    margin-top: 3vh;
+  }
 }
 header .nav-bar .nav-list {
   gap: 1rem;
@@ -117,6 +49,22 @@ header .nav-bar .nav-list {
   align-items: center;
   justify-content: space-evenly;
 }
+@media screen and (max-width: 500px) {
+  header .nav-bar .nav-list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    z-index: 1001;
+    background-color: #34699A;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+  }
+}
 header .nav-bar .nav-list a {
   font-size: 1.4rem;
   padding: 8px;
@@ -125,6 +73,33 @@ header .nav-bar .nav-list a {
   align-items: center;
   text-decoration: none;
   font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  header {
+    display: block;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .btn_header {
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 2vh;
+    right: 5vw;
+  }
+  header .btn_cerrarHeader {
+    display: block;
+    margin: 30px 30px 0 0;
+  }
+  header .visible { /* Clases para mostrar/ocultar nav-bar (mobile) */
+    visibility: visible;
+    opacity: 1;
+  }
+  header .no-visible {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 footer {
@@ -187,6 +162,12 @@ body .main_index .section_image_principal .imagen_principal_main {
   display: block;
   margin: auto;
 }
+@media screen and (max-width: 500px) {
+  body .main_index .section_image_principal {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 body .main_index .texto_principal_section {
   width: 35%;
   max-width: 35%;
@@ -198,6 +179,12 @@ body .main_index .texto_principal_section {
   flex-shrink: 1;
   min-width: 0;
   overflow-y: auto;
+}
+@media screen and (max-width: 500px) {
+  body .main_index .texto_principal_section {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 body .main_index .texto_principal_section h3 {
   font-size: 1.8rem;
@@ -221,11 +208,31 @@ body .main_index .iframe_section_principal .iframe_video_principal {
   height: 100%;
   max-width: 100%;
 }
+@media screen and (max-width: 500px) {
+  body .main_index .iframe_section_principal {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .main_index {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
 body .main_familia .grilla {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   width: 100%;
+}
+@media screen and (max-width: 500px) {
+  body .main_familia .grilla {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 body .main_familia .grilla section {
   padding: 1rem;
@@ -305,6 +312,22 @@ body .main_familia .grilla .imagen_section_familia4 img {
 body .main_familia .grilla .imagen_section_familia4 :hover {
   transform: scale(110%);
 }
+@media screen and (max-width: 500px) {
+  body .main_familia .grilla .imagen_section_familia1,
+  body .main_familia .grilla .imagen_section_familia2,
+  body .main_familia .grilla .imagen_section_familia3,
+  body .main_familia .grilla .imagen_section_familia4 {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .main_familia .grilla {
+    display: block;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 body .main_Objetivos {
   font-family: "Outfit", sans-serif;
   font-size: 2rem;
@@ -319,6 +342,12 @@ body .main_Objetivos {
   padding: 4rem;
   color: black;
   text-align: center;
+}
+@media screen and (max-width: 500px) {
+  body .main_Objetivos {
+    font-size: 1.4rem;
+    padding: 2rem;
+  }
 }
 body .main_Objetivos h2 {
   font-size: 4rem;

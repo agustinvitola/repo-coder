@@ -1,4 +1,5 @@
 @use "variables.scss" as vars;
+@use "mixins" as mix;
 
 header{
     font-family: vars.$fuente;
@@ -10,9 +11,10 @@ header{
     background-color: vars.$primary_color;
     justify-content: space-between;
     max-width: 100vw;
-            .btn_cerrarHeader, .btn_header{ 
+        .btn_cerrarHeader, .btn_header{ 
             display: none;
         }
+
     .Title{
         font-family: vars.$fuente;
         font-weight: 500;
@@ -20,13 +22,20 @@ header{
         line-height: 1.2;
         color: #ffffff;
         width: fit-content;
+        @include mix.respond-to(mobile){
+            font-size: 2.2rem;
+            width: 70%;
+        }
     }
     .nav-bar{   
         gap: 1rem;
         width: 70%;
-        max-width: 70%; /* ARREGLAR EN MEDIA Q TELEFONO */ 
-        ol ul{
+        max-width: 70%;
+        ol{
             padding-left: 2rem;
+            @include mix.respond-to(mobile){
+                margin-top: 3vh;
+            }
         }
         .nav-list{
             gap: 1rem;
@@ -36,6 +45,17 @@ header{
             height: 100%;
             align-items: center;
             justify-content: space-evenly;
+            @include mix.respond-to(mobile){
+                @include mix.flexible(flex, column, nowrap, flex-start, flex-start);
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 50%;
+                z-index: 1001;
+                background-color: vars.$secondary_color;
+                box-shadow: 0 0 0 100vmax rgba(0, 0, 0 , .5);
+                transition: visibility 0.3s ease, opacity 0.3s ease;
+            }
             a{
                 font-size: 1.4rem;
                 padding: 8px;
@@ -44,10 +64,36 @@ header{
                 align-items: center;
                 text-decoration: none;
                 font-weight: bold;
-            } 
-            
+            }
         }
     }
+
+    @include mix.respond-to(tablet){
+    }
+
+    @include mix.respond-to(mobile){
+        @include mix.flexible (block, column, wrap, center, center);
+        .btn_header{
+            display: block;
+            position: absolute;
+            margin: auto;
+            top: 2vh;
+            right: 5vw;
+        }
+        .btn_cerrarHeader{
+            display: block;
+            margin: 30px 30px 0 0;
+        }
+        .visible{ /* Clases para mostrar/ocultar nav-bar (mobile) */ 
+            visibility: visible;
+            opacity: 1;}
+        .no-visible{
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
 }
 footer{
     position: relative; 
