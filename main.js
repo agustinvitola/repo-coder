@@ -1,6 +1,7 @@
 const nav = document.querySelector("#nav");
 const abrir = document.getElementById("btn_abrir");
 const cerrar = document.getElementById("btn_cerrar");
+let btn= document.querySelector('#scroll_up');
 
 abrir.addEventListener('click', () => {
   nav.classList.add('visible');
@@ -12,7 +13,16 @@ cerrar.addEventListener('click', () => {
       nav.classList.remove('visible');
 });
 
+btn.addEventListener('click', () => {
+  console.log('click');
+  document.body.scrollTo({
+    top: 0
+  })
 
+document.documentElement.scrollTo({
+  top: 0
+})
+})
 
 const navLinks = nav.querySelectorAll('a'); // Selecciona todos los enlaces dentro del nav
 

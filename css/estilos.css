@@ -16,26 +16,39 @@ header .btn_cerrarHeader, header .btn_header {
 header .Title {
   font-family: "Outfit", sans-serif;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.6rem;
   line-height: 1.2;
+  margin-left: 1rem;
   color: #ffffff;
   width: fit-content;
 }
 @media screen and (max-width: 500px) {
   header .Title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .Title {
+    font-size: 2rem;
     width: 70%;
   }
 }
 header .nav-bar {
   gap: 1rem;
   width: 70%;
+  padding: 5px;
   max-width: 70%;
 }
 header .nav-bar ol {
   padding-left: 2rem;
 }
 @media screen and (max-width: 500px) {
+  header .nav-bar ol {
+    margin-top: 3vh;
+  }
+}
+@media screen and (max-width: 1024px) {
   header .nav-bar ol {
     margin-top: 3vh;
   }
@@ -65,14 +78,76 @@ header .nav-bar .nav-list {
     transition: visibility 0.3s ease, opacity 0.3s ease;
   }
 }
+@media screen and (max-width: 1024px) {
+  header .nav-bar .nav-list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    z-index: 1001;
+    background-color: #34699A;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+  }
+}
 header .nav-bar .nav-list a {
   font-size: 1.4rem;
   padding: 8px;
-  color: #34699A;
-  background-color: #f5f5f5;
+  color: #f5f5f5;
+  background-color: rgba(128, 128, 128, 0.212);
+  border-radius: 20px;
   align-items: center;
   text-decoration: none;
   font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: background-color 0.2s ease;
+}
+@media screen and (max-width: 1024px) {
+  header .nav-bar .nav-list a {
+    padding: 8px 60px 8px 60px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header .nav-bar .nav-list a {
+    padding: 4px 20px 4px 20px;
+  }
+}
+header .nav-bar .nav-list a:hover {
+  background-color: #663399;
+}
+header .nav-bar .nav-list a:active {
+  background-color: #733caa;
+}
+@media screen and (max-width: 1024px) {
+  header {
+    display: block;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .btn_header {
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 2vh;
+    right: 5vw;
+  }
+  header .btn_cerrarHeader {
+    display: block;
+    margin: 30px 30px 0 0;
+  }
+  header .visible { /* Clases para mostrar/ocultar nav-bar (mobile) */
+    visibility: visible;
+    opacity: 1;
+  }
+  header .no-visible {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 500px) {
   header {
@@ -117,6 +192,13 @@ footer p {
   word-wrap: break-word;
   margin-bottom: 0;
 }
+footer p span {
+  font-size: 0.2rem;
+}
+footer .scroll-up svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
 
 * {
   margin: 0;
@@ -127,7 +209,9 @@ footer p {
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(52, 105, 154, 0.2901960784);
+  background-image: url(../images/generated-image-ac63208c-a3cd-4d99-86c9-0cb2977f9d48.jpg);
+  background-size: 50px 50px;
+  background-repeat: repeat;
   box-sizing: border-box;
   overflow-x: hidden;
   display: grid;
@@ -135,10 +219,72 @@ body {
   /* main: INDEX */
   /* main: FAMILIA */
   /* main:Objetivos */
+  /* main:Contactos */
 }
 body h1, body h2, body h3, body h4, body h5, body h6 {
   margin: 0;
   font-weight: normal;
+}
+body .banner-index {
+  align-items: center;
+}
+body .banner-index div img {
+  width: 100vw;
+}
+@media screen and (max-width: 500px) {
+  body .banner-index {
+    display: none;
+  }
+}
+body .introduccion-text {
+  width: 100vw;
+  text-align: center;
+}
+body .introduccion-text h3 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+@media screen and (max-width: 500px) {
+  body .introduccion-text {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .introduccion-text {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+body .iframe {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+body .iframe_section_principal {
+  width: 45%;
+  max-width: 45%;
+  height: 40vh;
+  flex-shrink: 1;
+  min-width: 0;
+  margin: auto;
+}
+body .iframe_section_principal .iframe_video_principal {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+@media screen and (max-width: 500px) {
+  body .iframe_section_principal {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .iframe_section_principal {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 body .main_index { /* main: INDEX */
   max-width: 100vw;
@@ -146,6 +292,7 @@ body .main_index { /* main: INDEX */
   padding: 0 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
 }
 body .main_index .section_image_principal {
@@ -164,7 +311,15 @@ body .main_index .section_image_principal .imagen_principal_main {
 }
 @media screen and (max-width: 500px) {
   body .main_index .section_image_principal {
-    width: 100%;
+    margin: auto;
+    width: 80%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .main_index .section_image_principal {
+    margin: auto;
+    width: 80%;
     max-width: 100%;
   }
 }
@@ -183,6 +338,14 @@ body .main_index .texto_principal_section {
 @media screen and (max-width: 500px) {
   body .main_index .texto_principal_section {
     width: 100%;
+    background-color: rgba(0, 255, 255, 0.179);
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .main_index .texto_principal_section {
+    width: 100%;
+    background-color: rgba(0, 255, 255, 0.179);
     max-width: 100%;
   }
 }
@@ -195,23 +358,13 @@ body .main_index .texto_principal_section p {
   font-size: 1.4rem;
   line-height: 1.6;
   word-wrap: break-word;
+  height: 30vh;
 }
-body .main_index .iframe_section_principal {
-  width: 40%;
-  max-width: 40%;
-  height: 40vh;
-  flex-shrink: 1;
-  min-width: 0;
-}
-body .main_index .iframe_section_principal .iframe_video_principal {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-}
-@media screen and (max-width: 500px) {
-  body .main_index .iframe_section_principal {
+@media screen and (max-width: 1024px) {
+  body .main_index .texto_principal_section p {
     width: 100%;
     max-width: 100%;
+    height: 20vh;
   }
 }
 @media screen and (max-width: 500px) {
@@ -237,7 +390,7 @@ body .main_familia .grilla {
 body .main_familia .grilla section {
   padding: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   font-family: "Outfit", sans-serif;
   text-align: start;
   align-items: center;
@@ -245,11 +398,18 @@ body .main_familia .grilla section {
   font-weight: bold;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 500px) {
+  body .main_familia .grilla section {
+    flex-wrap: wrap;
+  }
+}
 body .main_familia .grilla .sectionFamilia1, body .main_familia .grilla .sectionFamilia2, body .main_familia .grilla .sectionFamilia3, body .main_familia .grilla .sectionFamilia4 {
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 body .main_familia .grilla .imagen_section_familia1 {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -262,26 +422,26 @@ body .main_familia .grilla .imagen_section_familia1 img {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
 }
 body .main_familia .grilla .imagen_section_familia1 :hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 body .main_familia .grilla .imagen_section_familia2 {
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 body .main_familia .grilla .imagen_section_familia2 img {
-  width: 50%;
+  width: 65%;
   border: 0.65vw outset #ffffff;
   height: auto;
   transition: transform 0.2s ease;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
 }
 body .main_familia .grilla .imagen_section_familia2 :hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 body .main_familia .grilla .imagen_section_familia3 {
-  width: 50%;
+  width: 80%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -294,23 +454,23 @@ body .main_familia .grilla .imagen_section_familia3 img {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
 }
 body .main_familia .grilla .imagen_section_familia3 :hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 body .main_familia .grilla .imagen_section_familia4 {
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 body .main_familia .grilla .imagen_section_familia4 img {
-  width: 45%;
+  width: 60%;
   border: 0.65vw outset #ffffff;
   height: auto;
   transition: transform 0.2s ease;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
 }
 body .main_familia .grilla .imagen_section_familia4 :hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 @media screen and (max-width: 500px) {
   body .main_familia .grilla .imagen_section_familia1,
@@ -331,7 +491,8 @@ body .main_familia .grilla .imagen_section_familia4 :hover {
 body .main_Objetivos {
   font-family: "Outfit", sans-serif;
   font-size: 2rem;
-  max-width: 100vw;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   padding: 0 10px;
   display: flex;
@@ -371,17 +532,37 @@ body .main_Objetivos .carousel-item {
   width: 10rem;
 }
 body .main_contacto {
-  margin: auto;
-  align-content: center;
-  background-color: #FDF5AA;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 body .main_contacto .contacto {
   padding: 4rem;
+  border-radius: 10px;
+  background-color: #FDF5AA;
+  width: 30%;
+  height: fit-content;
+  width: fit-content;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+  margin: 40px;
 }
 body .main_contacto .contacto form {
   text-align: center;
+}
+body .main_contacto .contactame h2 {
+  font-weight: bold;
+}
+body .main_contacto .contactame img {
+  width: 200px;
+}
+@media screen and (max-width: 500px) {
+  body .main_contacto .contactame {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
