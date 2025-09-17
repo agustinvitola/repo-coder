@@ -13,7 +13,7 @@
 body{
     width: 100%;
     min-height: 100vh;
-    background-image: url(../images/generated-image-ac63208c-a3cd-4d99-86c9-0cb2977f9d48.jpg);
+    background-image: url(../images/body_logo.jpg);
     background-size: 50px 50px;
     background-repeat: repeat;
     box-sizing:border-box;
@@ -182,6 +182,9 @@ body{
                 @include mix.respond-to(mobile){
                     flex-wrap: wrap;
                 }
+                @include mix.respond-to(tablet){
+                    flex-wrap: wrap;
+                }
             }
             .sectionFamilia1, .sectionFamilia2, .sectionFamilia3, .sectionFamilia4{
                 justify-content: center;
@@ -272,32 +275,20 @@ body{
         font-family: vars.$fuente;
         font-size: 2rem;
         width: 100%;
-        height: 100%;
         overflow: hidden;
-        padding: 0 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        margin: auto;
-        padding: 4rem; 
+        justify-content: space-between;
+        padding: 0 4rem 0 4rem; 
         color:  black;
         text-align: center;
         @include mix.respond-to(mobile){
             font-size: 1.4rem;
             padding: 2rem;
+            gap: 2rem;
         }
-        h2{
-            font-size: 4rem;
-            top:150px;
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: vars.$footer_color;
-            border-radius: 50px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.48);
-            color: black;
-        }
-        .logos{
+        div .logos{
             display: inline-flex;
             bottom: 150px;
             gap: 20px;
@@ -305,8 +296,47 @@ body{
                 width: 50px;
             }
         }
-        .carousel-item{
+        div .carousel-item{
             width: 10rem;
+            @include mix.respond-to(mobile){
+                background-image: none;
+                margin-top: 2rem;
+            }
+        }
+        .banner_objetivos{
+            display: flex;
+            width: 100vw;
+            background-image: url(../images/objetivosImg.jpg);
+            background-size:cover;
+            justify-content: center;
+            align-items: flex-end;
+            h2{
+                width: fit-content;
+                height: fit-content;
+                font-size: 4rem;
+                padding: 30px 160px 30px 160px;
+                backdrop-filter: blur(10px);
+                border-radius: 50px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.48);
+                color: vars.$footer_color;
+                @include mix.respond-to(mobile){
+                    background-color: vars.$primary_color;
+                    color: #ffffff;
+                    padding: 5px;
+                }
+            }
+            @include mix.respond-to(mobile){
+                background-image: none;
+            }             
+        }
+        .flexbox_objetivos{
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            p{
+                width: 60vw;
+                margin: auto;
+            }
         }
      }/* main:Objetivos */
 
@@ -320,10 +350,10 @@ body{
         justify-content: space-evenly;
         flex-wrap: wrap;
         .contacto{
-            padding: 4rem;     
+            padding: 1rem 7rem 1rem 7rem;     
             border-radius: 10px;
             background-color: vars.$footer_color;
-            width: 30%;
+            width: 40%;
             height: fit-content;
             width: fit-content;
             box-shadow: 0px 4px 10px rgba(0,0,0,0.48);
@@ -338,11 +368,17 @@ body{
             }
             img{
                 width: 200px;
+                @include mix.respond-to(mobile){
+                    width: 175px;
+                }
             }
         }
         @include mix.respond-to(mobile){
             .contactame{
-                display: none;
+                display: block;
+            }
+            .contacto{
+                padding: 1rem;
             }
         }
     }

@@ -41,9 +41,11 @@ header{
             padding-left: 2rem;
             @include mix.respond-to(mobile){
                 margin-top: 3vh;
+                text-align: center;
             }
             @include mix.respond-to(tablet){
                 margin-top: 3vh;
+                text-align: center;
             }
         }
         .nav-list{
@@ -59,6 +61,7 @@ header{
                 position: fixed;
                 bottom: 0;
                 right: 0;
+                justify-content: center;
                 width: 50%;
                 z-index: 1001;
                 background-color: vars.$secondary_color;

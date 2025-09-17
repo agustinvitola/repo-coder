@@ -46,11 +46,13 @@ header .nav-bar ol {
 @media screen and (max-width: 500px) {
   header .nav-bar ol {
     margin-top: 3vh;
+    text-align: center;
   }
 }
 @media screen and (max-width: 1024px) {
   header .nav-bar ol {
     margin-top: 3vh;
+    text-align: center;
   }
 }
 header .nav-bar .nav-list {
@@ -71,6 +73,7 @@ header .nav-bar .nav-list {
     position: fixed;
     bottom: 0;
     right: 0;
+    justify-content: center;
     width: 50%;
     z-index: 1001;
     background-color: #34699A;
@@ -209,7 +212,7 @@ footer .scroll-up svg {
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: url(../images/generated-image-ac63208c-a3cd-4d99-86c9-0cb2977f9d48.jpg);
+  background-image: url(../images/body_logo.jpg);
   background-size: 50px 50px;
   background-repeat: repeat;
   box-sizing: border-box;
@@ -403,6 +406,11 @@ body .main_familia .grilla section {
     flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 1024px) {
+  body .main_familia .grilla section {
+    flex-wrap: wrap;
+  }
+}
 body .main_familia .grilla .sectionFamilia1, body .main_familia .grilla .sectionFamilia2, body .main_familia .grilla .sectionFamilia3, body .main_familia .grilla .sectionFamilia4 {
   justify-content: center;
   margin-top: 20px;
@@ -492,15 +500,12 @@ body .main_Objetivos {
   font-family: "Outfit", sans-serif;
   font-size: 2rem;
   width: 100%;
-  height: 100%;
   overflow: hidden;
-  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  margin: auto;
-  padding: 4rem;
+  justify-content: space-between;
+  padding: 0 4rem 0 4rem;
   color: black;
   text-align: center;
 }
@@ -508,28 +513,64 @@ body .main_Objetivos {
   body .main_Objetivos {
     font-size: 1.4rem;
     padding: 2rem;
+    gap: 2rem;
   }
 }
-body .main_Objetivos h2 {
-  font-size: 4rem;
-  top: 150px;
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #FDF5AA;
-  border-radius: 50px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
-  color: black;
-}
-body .main_Objetivos .logos {
+body .main_Objetivos div .logos {
   display: inline-flex;
   bottom: 150px;
   gap: 20px;
 }
-body .main_Objetivos .logos img {
+body .main_Objetivos div .logos img {
   width: 50px;
 }
-body .main_Objetivos .carousel-item {
+body .main_Objetivos div .carousel-item {
   width: 10rem;
+}
+@media screen and (max-width: 500px) {
+  body .main_Objetivos div .carousel-item {
+    background-image: none;
+    margin-top: 2rem;
+  }
+}
+body .main_Objetivos .banner_objetivos {
+  display: flex;
+  width: 100vw;
+  background-image: url(../images/objetivosImg.jpg);
+  background-size: cover;
+  justify-content: center;
+  align-items: flex-end;
+}
+body .main_Objetivos .banner_objetivos h2 {
+  width: fit-content;
+  height: fit-content;
+  font-size: 4rem;
+  padding: 30px 160px 30px 160px;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
+  color: #FDF5AA;
+}
+@media screen and (max-width: 500px) {
+  body .main_Objetivos .banner_objetivos h2 {
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .main_Objetivos .banner_objetivos {
+    background-image: none;
+  }
+}
+body .main_Objetivos .flexbox_objetivos {
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+body .main_Objetivos .flexbox_objetivos p {
+  width: 60vw;
+  margin: auto;
 }
 body .main_contacto {
   display: flex;
@@ -541,10 +582,10 @@ body .main_contacto {
   flex-wrap: wrap;
 }
 body .main_contacto .contacto {
-  padding: 4rem;
+  padding: 1rem 7rem 1rem 7rem;
   border-radius: 10px;
   background-color: #FDF5AA;
-  width: 30%;
+  width: 40%;
   height: fit-content;
   width: fit-content;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.48);
@@ -560,8 +601,16 @@ body .main_contacto .contactame img {
   width: 200px;
 }
 @media screen and (max-width: 500px) {
+  body .main_contacto .contactame img {
+    width: 175px;
+  }
+}
+@media screen and (max-width: 500px) {
   body .main_contacto .contactame {
-    display: none;
+    display: block;
+  }
+  body .main_contacto .contacto {
+    padding: 1rem;
   }
 }
 
